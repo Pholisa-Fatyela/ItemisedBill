@@ -12,10 +12,10 @@ class Mytest(unittest.TestCase):
   def test_creatingDictionaryList(self):
     data = readingCSV()
     results = creatingDictionaryList(data)
-    self.assertEqual(results[1]['Date'], '01/10/2015')
-    self.assertEqual(results[1]['Provider'], 'MTN')
-    self.assertEqual(results[1]['Number'], '0838758090')
-    self.assertEqual(results[1]['Duration'], '00h01m34s')
+    self.assertEqual(results[11]['Date'], '10/10/2015')
+    self.assertEqual(results[11]['Provider'], 'Vodacom')
+    self.assertEqual(results[11]['Number'], '0828907600')
+    self.assertEqual(results[11]['Duration'], '00h00h56ss')
 
   def test_specifiedCallsForProvider(self):
     csv = readingCSV()

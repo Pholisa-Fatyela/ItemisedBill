@@ -5,3 +5,10 @@ def readingCSV():
         reader = csv.reader(newFile)
         newbill = [row for row in reader]
         return newbill
+
+def creatingDictionaryList(data):
+    dictionaryList = []
+    keys = ['Date', 'Provider', 'Number', 'Duration']
+    for lists in data:
+        dictionaryList.append(dict(zip(keys, lists)))
+    return dictionaryList

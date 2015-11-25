@@ -1,5 +1,5 @@
 import unittest
-from itemisedBill import readingCSV, creatingDictionaryList
+from itemisedBill import readingCSV, creatingDictionaryList, specifiedCallsForProvider
 
 class Mytest(unittest.TestCase):
   def test_readingCSV(self):
@@ -16,6 +16,15 @@ class Mytest(unittest.TestCase):
     self.assertEqual(results[1]['Provider'], 'MTN')
     self.assertEqual(results[1]['Number'], '0838758090')
     self.assertEqual(results[1]['Duration'], '00h01m34s')
+
+  def test_specifiedCallsForProvider(self):
+    csv = readingCSV()
+    data = creatingDictionaryList(csv)
+    results = specifiedCallsForProvider(data, 'MTN')
+    self.assertEqual(results[15]['Date'], '27/10/2015')
+    self.assertEqual(results[15]['Provider'], 'MTN')
+    self.assertEqual(results[15]['Number'], '0831239023')
+    self.assertEqual(results[15]['Duration'], '00h03m04s')
 
 if __name__ == '__main__':
   unittest.main()

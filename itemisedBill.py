@@ -12,3 +12,10 @@ def creatingDictionaryList(data):
     for lists in data:
         dictionaryList.append(dict(zip(keys, lists)))
     return dictionaryList
+
+def specifiedCallsForProvider(data, Provider):
+    phoneCalls = []
+    for dictionary in data:
+        if dictionary['Provider'] == Provider:
+            phoneCalls.append(dictionary)
+    return phoneCalls
